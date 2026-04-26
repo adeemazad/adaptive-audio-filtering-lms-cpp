@@ -20,10 +20,6 @@ FIR filter class for improved computational efficiency.
 
 ## How It Works
 
-Vibraphone.wav (wet/mixed signal)  ─┐
-├→ LMS Adaptive FIR Filter → Cleaned Output
-Trumpet.wav    (dry/reference)     ─┘
-
 1. Both audio files are read and normalised
 2. First 4.9 seconds are skipped (dead time at file start)
 3. FIR filter pre-trains for 2 seconds on the reference signal

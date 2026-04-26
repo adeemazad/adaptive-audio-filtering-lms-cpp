@@ -101,7 +101,5 @@ FIR Filter Design, Digital Signal Processing
 ## Author
 
 **Adeem Azad**
-
 BEng Mechatronics, University of Glasgow
-
 [LinkedIn](https://www.linkedin.com/in/adeem-azad)

@@ -1,3 +1,29 @@
+# LMS Adaptive Audio Filtering
+
+Real-time audio source separation using a Least Mean Squares (LMS) 
+adaptive FIR filter, implemented in both C++ and Python. Removes 
+unwanted trumpet bleed from a vibraphone recording by learning the 
+acoustic impulse response between the two signals.
+
+## Overview
+
+In multi-instrument recordings, sound bleed between microphones 
+is a common problem. This project addresses a real-world case: 
+trumpet sound bleeding into a vibraphone track intended for CD 
+production. An LMS adaptive FIR filter learns the impulse response 
+of the interference path and subtracts it from the mixed signal, 
+recovering a clean vibraphone output.
+
+The algorithm is implemented twice — first in Python as a reference, 
+then reimplemented in C++ using the SoX audio library and a custom 
+FIR filter class for improved computational efficiency.
+
+## How It Works
+
+Vibraphone.wav (wet/mixed signal)  ─┐
+├→ LMS Adaptive FIR Filter → Cleaned Output
+Trumpet.wav    (dry/reference)     ─┘
+
 1. Both audio files are read and normalised
 2. First 4.9 seconds are skipped (dead time at file start)
 3. FIR filter pre-trains for 2 seconds on the reference signal
